@@ -6,8 +6,7 @@ const server = require('http').createServer(app);
 const bodyParse = require('body-parser');
 const io = require('socket.io')(server);
 
-// var port = process.env.PORT;
-var port = 3000;
+var port = process.env.PORT;
 
 app.use(
 	bodyParse.urlencoded({
