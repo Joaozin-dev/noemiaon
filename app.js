@@ -22,7 +22,7 @@ app.engine('html',require('ejs').renderFile);
 app.set('view engine','html');
 
 io.on('connection',function(socket){
-	console.log(`Socket conectado ${socket.id}`);
+	console.log(`Socket conectado ${socket.id}`); 
 	app.get('/login/:user',function(req,res){
 		io.emit('login',{user: req.params.user});
 		res.send('send');
