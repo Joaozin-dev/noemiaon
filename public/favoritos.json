@@ -1,0 +1,38 @@
+{
+	"contas": {
+		"kajrqkjnrejwrnw": {
+			"nome": "João Pedro de Oliveira Marcos",
+			"email": "ebtjoaopedro@gmail.com"
+		},
+		"ewlifjwsdxwefg": {
+			"nome": "Marcos Felipe",
+			"email": "marcosfelipe@gmail.com"
+		},
+		"kfdferjg": {
+			"nome": "José de Oliveira Santos",
+			"email": "joliversantos@gmail.com"
+		},
+		"erlkghergrejktn": {
+			"nome": "João de Paula",
+			"email": "paulajoao7@gmail.com"
+		},
+		"erlkjtnerktnkrejter": {
+			"nome": "Rafael dos Santos Silva",
+			"email": "rafaelsilva1504@gmail.com"
+		}
+	},
+	"links": {
+		"l1":{
+			"titulo": "Site de Programação",
+			"foto": "https://www.programacao.com.br"
+		},
+		"l2":{
+			"titulo": "Pagina Inicial",
+			"foto": "https://www.noemiaon.ml/logo.png"
+		},
+		"l3":{
+			"titulo": "YouTube",
+			"foto": "https://www.youtube.com"
+		}
+	}
+}

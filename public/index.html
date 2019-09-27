@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="">
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
+	<!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+	<!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+	<nav>
+		<div class="nav-wrapper">
+			<a href="#!" class="brand-logo">Logo</a>
+			<a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+			<ul class="right hide-on-med-and-down">
+				<li><a href="sass.html">Sass</a></li>
+				<li><a href="badges.html">Components</a></li>
+				<li><a href="collapsible.html">Javascript</a></li>
+				<li><a href="mobile.html">Mobile</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<ul class="sidenav" id="mobile-demo">
+		<li><a href="sass.html">Sass</a></li>
+		<li><a href="badges.html">Components</a></li>
+		<li><a href="collapsible.html">Javascript</a></li>
+		<li><a href="mobile.html">Mobile</a></li>
+	</ul>
+	<form autocomplete="off">
+		<input type="text" id="user">
+		<input type="text" id="texto">
+		<button class="btn" type="submit">Enviar</button>
+		<div class="msg"></div>
+	</form>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			const socket = io("http://localhost:3000");
+			socket.on('login',function(response){
+				$('.msg').html($('.msg').html() + '<br>'+response.user + ' - ' + response.texto);
+				M.toast({html: '<span>'+response.user+' - '+response.texto+'</span>',displayLength: 3500});
+			});
+			// $('form').submit(function(event){
+			// 	event.preventDefault();
+			// 	$.ajax({
+			// 		url: '/login',
+			// 		type: 'post',
+			// 		dataType: 'html',
+			// 		data: {
+			// 			user: $('#user').val(),
+			// 			texto: $('#texto').val()
+			// 		},
+			// 		success : function(response){
+			// 			if(response === 'send'){
+			// 				var toastintoast = "M.toast({html: '<span>Reiniciando...</span>',displayLength: 7000,completeCallback: function(){window.location = 'http://localhost:3000'}})";
+			// 				var toastHTML = '<span>Não foi possivel enviar?</span><button onclick = "'+toastintoast+'" class="btn-flat toast-action">REINICIA AQUI</button>';
+  	// 						M.toast({html: toastHTML,displayLength: 2400});
+			// 			}
+			// 		}
+			// 	});
+			// });
+			$('.sidenav').sidenav();
+		});
+	</script>
+</body>
+</html>
